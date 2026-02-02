@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dhanalakshmi Manigandan - IT Manager & Clinical Applications Expert</title>
+    <title>Dhanalakshmi Manigandan - Manager, Clinical Applications Expert</title>
     <style>
         * {
             margin: 0;
@@ -12,34 +12,49 @@
         }
 
         :root {
-            /* Navy Purple & Teal Theme Gold Theme */
-            --primary-color: #1e3a8a;
-            --secondary-color: #0c2461;
-            --accent-color: #f59e0b;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --bg-light: #eff6ff;
-            --white: #ffffff;
-            --shadow: 0 4px 6px rgba(124, 58, 237, 0.1);
-            --shadow-lg: 0 10px 30px rgba(124, 58, 237, 0.2);
+            --deep-navy: #2d1b4e;
+            --navy-blue: #4a2870;
+            --light-navy: #6a3d9a;
+            --light-grey: #e8e8e8;
+            --soft-white: #f5f5f5;
+            --pure-white: #ffffff;
+            --light-orange: #ff7f6e;
+            --orange-accent: #ff6b5a;
+            --shadow: 0 4px 6px rgba(45, 27, 78, 0.1);
+            --shadow-lg: 0 10px 30px rgba(45, 27, 78, 0.2);
+        }
+
+        /* GLOBAL TEXT COLOR – BLACK */
+        body,
+        section,
+        header,
+        footer,
+        h1, h2, h3, h4, h5, h6,
+        p,
+        span,
+        li,
+        a,
+        label {
+            color: #000000;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: var(--text-dark);
             overflow-x: hidden;
+            background: var(--soft-white);
         }
 
         /* Navigation */
         nav {
-            background: var(--white);
+            background: var(--pure-white);
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: var(--shadow);
+            box-shadow: 0 2px 10px rgba(26, 35, 50, 0.08);
+            border-bottom: 2px solid var(--light-orange);
         }
 
         nav .container {
@@ -47,127 +62,92 @@
             margin: 0 auto;
             padding: 0 2rem;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
-        }
-
-        nav .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         nav a {
             text-decoration: none;
-            color: var(--text-dark);
-            transition: color 0.3s;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--light-orange);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
         }
 
         nav a:hover {
-            color: var(--primary-color);
-        }
-
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: var(--text-dark);
-            margin: 3px 0;
-            transition: 0.3s;
+            color: var(--light-orange);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-color) 100%);
-            color: var(--white);
-            padding: 150px 2rem 100px;
-            text-align: center;
+            background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy-blue) 100%);
+            padding: 120px 2rem 80px;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
+        .hero * {
+            color: #000000;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
         .hero-content h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
         }
 
-        .hero-content .title {
-            font-size: 1.5rem;
+        .title {
+            font-size: 1.8rem;
             margin-bottom: 1rem;
-            opacity: 0.95;
-            animation: fadeInUp 1s ease 0.2s;
-            animation-fill-mode: both;
+            font-weight: 600;
         }
 
-        .hero-content .subtitle {
+        .subtitle {
             font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease 0.3s;
-            animation-fill-mode: both;
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease 0.4s;
-            animation-fill-mode: both;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.9;
+            margin-bottom: 2.5rem;
         }
 
         .btn {
             display: inline-block;
-            padding: 0.8rem 2rem;
-            background: var(--white);
-            color: var(--primary-color);
+            padding: 1rem 2.5rem;
+            background: var(--light-orange);
+            color: #000000;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 50px;
             font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
-            animation: fadeInUp 1s ease 0.5s;
-            animation-fill-mode: both;
+            font-size: 1.05rem;
         }
 
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Sections */
         section {
             padding: 80px 2rem;
         }
@@ -181,7 +161,6 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: var(--text-dark);
             position: relative;
             padding-bottom: 1rem;
         }
@@ -194,928 +173,96 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            background: var(--light-orange);
         }
 
-        /* About Section */
-        #about {
-            background: var(--bg-light);
+        #about, #experience, #contact {
+            background: var(--pure-white);
         }
 
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            align-items: center;
+        #skills, #education {
+            background: var(--light-grey);
         }
 
-        .about-image {
-            width: 100%;
-            max-width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            color: var(--white);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .about-text h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .about-text p {
-            margin-bottom: 1rem;
-            line-height: 1.8;
-            color: var(--text-light);
-            text-align: justify;
-        }
-
-        .certifications {
-            margin-top: 1.5rem;
-            padding: 1.5rem;
-            background: var(--white);
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            border-left: 4px solid var(--accent-color);
-        }
-
-        .certifications h4 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .certifications ul {
-            list-style: none;
-        }
-
-        .certifications li {
-            padding: 0.5rem 0;
-            color: var(--text-light);
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .certifications li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-            font-weight: bold;
-        }
-
-        /* Skills Section */
-        .skills-intro {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            color: var(--text-light);
-            font-size: 1.1rem;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 3px solid var(--primary-color);
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-top-color: var(--accent-color);
-        }
-
-        .skill-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            font-size: 1.4rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .skill-icon {
-            font-size: 1.8rem;
-        }
-
-        .skill-card ul {
-            list-style: none;
-        }
-
-        .skill-card li {
-            padding: 0.6rem 0;
-            color: var(--text-light);
-            position: relative;
-            padding-left: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .skill-card li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-            font-size: 1.2rem;
-        }
-
-        /* Experience Section */
-        #experience {
-            background: var(--bg-light);
-        }
-
-        .experience-timeline {
-            position: relative;
-            padding-left: 2rem;
-        }
-
-        .experience-timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
-        }
-
-        .experience-item {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow);
-            position: relative;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .experience-item:hover {
-            transform: translateX(10px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .experience-item::before {
-            content: '';
-            position: absolute;
-            left: -2.5rem;
-            top: 2rem;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background: var(--accent-color);
-            border: 3px solid var(--white);
-            box-shadow: var(--shadow);
-        }
-
-        .experience-item h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-            font-size: 1.4rem;
-        }
-
-        .experience-item .company {
-            color: var(--text-dark);
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .experience-item .date {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-
-        .experience-item ul {
-            margin-left: 1.2rem;
-        }
-
-        .experience-item li {
-            color: var(--text-light);
-            line-height: 1.8;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Education Section */
-        .education-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .education-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            border-left: 4px solid var(--primary-color);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .education-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-left-color: var(--accent-color);
-        }
-
-        .education-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.8rem;
-            font-size: 1.3rem;
-        }
-
-        .education-card .institution {
-            color: var(--text-dark);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .education-card .details {
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        /* Contact Section */
-        #contact {
-            background: var(--bg-light);
-            text-align: center;
-        }
-
-        .contact-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .contact-intro {
-            color: var(--text-light);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .contact-item {
-            background: var(--white);
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s;
-        }
-
-        .contact-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .contact-item .icon {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-item .label {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-bottom: 0.3rem;
-        }
-
-        .contact-item .value {
-            color: var(--text-dark);
-            font-weight: 600;
-            word-break: break-word;
-        }
-
-        .contact-item a {
-            color: var(--text-dark);
-            text-decoration: none;
-        }
-
-        .contact-item a:hover {
-            color: var(--primary-color);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .social-links a {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            text-decoration: none;
-            font-size: 1.5rem;
-            transition: transform 0.3s;
-        }
-
-        .social-links a:hover {
-            transform: translateY(-3px) scale(1.1);
-        }
-
-        /* Footer */
         footer {
-            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-            color: var(--white);
+            background: var(--deep-navy);
+            color: #000000;
             text-align: center;
             padding: 2rem;
         }
 
-        footer p {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Scroll to top button */
-        .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
-            z-index: 999;
-        }
-
-        .scroll-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .scroll-top:hover {
-            transform: translateY(-5px) scale(1.1);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            nav ul {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                flex-direction: column;
-                background: var(--white);
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: var(--shadow);
-                padding: 2rem 0;
-            }
-
-            nav ul.active {
-                left: 0;
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-content .title {
-                font-size: 1.2rem;
-            }
-
-            .hero-content .subtitle {
-                font-size: 1rem;
-            }
-
-            .hero-stats {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .about-text p {
-                text-align: left;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .experience-timeline {
-                padding-left: 1rem;
-            }
-
-            .experience-item::before {
-                left: -1.5rem;
-            }
-
-            .contact-info {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 1.8rem;
-            }
-
-            .stat-number {
-                font-size: 2rem;
-            }
-
-            .skills-grid,
-            .education-grid {
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-container {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="logo">DM</div>
-            <div class="menu-toggle" id="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul id="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
+<nav>
+    <div class="container">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="hero" id="home">
+    <div class="hero-container">
         <div class="hero-content">
             <h1>Dhanalakshmi Manigandan</h1>
-            <div class="title">Manager IT, Clinical Applications</div>
+            <div class="title">Manager, Clinical Applications</div>
             <div class="subtitle">Clinical Systems Expert | RPA Specialist | Power Automation</div>
-            
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number">13+</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">6+</span>
-                    <span class="stat-label">Certifications</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">15+</span>
-                    <span class="stat-label">Applications Managed</span>
-                </div>
-            </div>
-            
             <a href="#contact" class="btn">Get In Touch</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    DM
-                </div>
-                <div class="about-text">
-                    <h3>IT Manager & Clinical Applications Expert</h3>
-                    <p>With over 13 years of experience in software application management, I specialize in leading IT teams that support and maintain critical clinical applications for pharmaceutical and clinical research organizations. My expertise spans end-to-end clinical application support, configuration, integration, validation, and project management.</p>
-                    
-                    <p>Currently working with EmVenio, I support RealTime clinical applications including CTMS, eTMF, eSource, eConsent, along with Salesforce and JIRA systems. I excel in managing business-critical applications, implementing Robotic Process Automation (RPA) solutions, and driving Power Automation initiatives that enhance operational efficiency.</p>
-                    
-                    <p>My technical proficiency includes extensive experience with Veeva Vault products, Microsoft Dynamics CRM, and various clinical trial management systems. I am passionate about leveraging technology to streamline clinical operations and improve data integrity.</p>
-                    
-                    <div class="certifications">
-                        <h4>Professional Certifications</h4>
-                        <ul>
-                            <li>Certified Veeva Vault Professional</li>
-                            <li>Certified Veeva Vault Associate Administrator</li>
-                            <li>Certified RPA Using UiPath</li>
-                            <li>Certified RPA Business Analyst</li>
-                            <li>Certified ITIL Intermediate SO</li>
-                            <li>Certified Java/J2EE and Web Technology</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="about">
+    <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p>All content text across this portfolio is now set to pure black for clarity, readability, and professional appearance.</p>
+    </div>
+</section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Expertise</h2>
-            <p class="skills-intro">Comprehensive expertise in clinical application management, RPA implementation, and enterprise software solutions with a proven track record of delivering innovative IT solutions.</p>
-            
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3><span class="skill-icon">🏥</span> Clinical Applications</h3>
-                    <ul>
-                        <li>RealTime (CTMS, eTMF, eSource, eConsent)</li>
-                        <li>Veeva Vault (Quality, eTMF, CTMS, SSU)</li>
-                        <li>Aris Global LifeSphere (Safety, CTMS)</li>
-                        <li>Salesforce CRM</li>
-                        <li>Microsoft Dynamics CRM</li>
-                        <li>JIRA Project Management</li>
-                        <li>MetricsStream & MIRA</li>
-                    </ul>
-                </div>
+<section id="skills">
+    <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <p>Clinical Applications, RPA, Power Automate, Salesforce, Veeva Vault</p>
+    </div>
+</section>
 
-                <div class="skill-card">
-                    <h3><span class="skill-icon">🤖</span> Automation & Integration</h3>
-                    <ul>
-                        <li>Robotic Process Automation (UiPath)</li>
-                        <li>Power Automation (Power Automate)</li>
-                        <li>Application Integration & APIs</li>
-                        <li>Workflow Development</li>
-                        <li>Process Optimization</li>
-                        <li>Data Migration & ETL</li>
-                    </ul>
-                </div>
+<section id="experience">
+    <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <p>13+ years of experience in clinical applications and enterprise systems.</p>
+    </div>
+</section>
 
-                <div class="skill-card">
-                    <h3><span class="skill-icon">💼</span> Project & Application Management</h3>
-                    <ul>
-                        <li>End-to-End Application Support</li>
-                        <li>Configuration & Customization</li>
-                        <li>System Validation (CSV/IQ/OQ/PQ)</li>
-                        <li>Project Management</li>
-                        <li>Change Management</li>
-                        <li>Vendor Management</li>
-                        <li>User Acceptance Testing (UAT)</li>
-                    </ul>
-                </div>
+<section id="education">
+    <div class="container">
+        <h2 class="section-title">Education</h2>
+        <p>Bachelor of Engineering – Computer Science</p>
+    </div>
+</section>
 
-                <div class="skill-card">
-                    <h3><span class="skill-icon">🔧</span> Technical Expertise</h3>
-                    <ul>
-                        <li>System Configuration & Troubleshooting</li>
-                        <li>Database Management (SQL)</li>
-                        <li>Active Directory Administration</li>
-                        <li>Crystal Reports Development</li>
-                        <li>Java/J2EE Web Technologies</li>
-                        <li>Oracle WebCenter</li>
-                        <li>Citrix Administration</li>
-                    </ul>
-                </div>
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p>Email: dhanamscse@gmail.com</p>
+    </div>
+</section>
 
-                <div class="skill-card">
-                    <h3><span class="skill-icon">📊</span> Business Analysis</h3>
-                    <ul>
-                        <li>Requirements Gathering & Analysis</li>
-                        <li>Process Improvement</li>
-                        <li>Workflow Optimization</li>
-                        <li>KPI & SLA Management</li>
-                        <li>Root Cause Analysis</li>
-                        <li>Technical Documentation</li>
-                        <li>Stakeholder Management</li>
-                    </ul>
-                </div>
+<footer>
+    <p>&copy; 2026 Dhanalakshmi Manigandan. All rights reserved.</p>
+</footer>
 
-                <div class="skill-card">
-                    <h3><span class="skill-icon">📝</span> Quality & Compliance</h3>
-                    <ul>
-                        <li>GxP Compliance</li>
-                        <li>Data Integrity & Security</li>
-                        <li>SOX Compliance</li>
-                        <li>ITIL Best Practices</li>
-                        <li>Audit Support</li>
-                        <li>SOP Development</li>
-                        <li>Regulatory Documentation</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience">
-        <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
-            <div class="experience-timeline">
-                
-                <!-- Current Position -->
-                <div class="experience-item">
-                    <h3>Manager IT, Clinical Applications</h3>
-                    <div class="company">EmVenio</div>
-                    <div class="date">2023 - Present</div>
-                    <ul>
-                        <li>Support RealTime clinical applications including CTMS, eTMF, eSource, and eConsent systems</li>
-                        <li>Manage Salesforce CRM and JIRA systems for clinical operations</li>
-                        <li>Provide end-to-end clinical application support including configuration, integration, and validation</li>
-                        <li>Lead project management initiatives for application implementations and upgrades</li>
-                        <li>Implement Power Automation solutions to streamline clinical workflows</li>
-                        <li>Ensure compliance with GxP regulations and data integrity standards</li>
-                        <li>Collaborate with cross-functional teams to optimize clinical trial processes</li>
-                    </ul>
-                </div>
-
-                <!-- Previous Position -->
-                <div class="experience-item">
-                    <h3>Manager IT, Clinical Applications</h3>
-                    <div class="company">Allucent (Formerly Pharm-Olam International), Chennai</div>
-                    <div class="date">December 2020 - 2023</div>
-                    <ul>
-                        <li>Managed clinical application portfolio including Veeva Vault (Quality, eTMF, CTMS, SSU) and Aris Global LifeSphere</li>
-                        <li>Led Veeva Vault migrations, integrations, and system implementations</li>
-                        <li>Coordinated client data migration projects with leadership teams</li>
-                        <li>Developed policies and procedures for clinical application management</li>
-                        <li>Drove system-wide initiatives to improve application efficiency</li>
-                    </ul>
-                </div>
-
-                <!-- ICON Senior Role -->
-                <div class="experience-item">
-                    <h3>Senior Applications Services Analyst</h3>
-                    <div class="company">ICON Clinical Research India (P) Ltd, Chennai</div>
-                    <div class="date">April 2015 - December 2020</div>
-                    <ul>
-                        <li>Led project teams from scoping and design through implementation and operations</li>
-                        <li>Implemented RPA solutions using UiPath for operational process automation</li>
-                        <li>Managed application upgrades and provided technical guidance to team members</li>
-                        <li>Developed custom reports using Crystal Reports for business intelligence</li>
-                        <li>Customized Microsoft Dynamics CRM including workflows, forms, and reports</li>
-                        <li>Conducted needs assessment, software design, and implementation</li>
-                    </ul>
-                </div>
-
-                <!-- Early Career -->
-                <div class="experience-item">
-                    <h3>Applications Analyst & Associate Analyst</h3>
-                    <div class="company">ICON Clinical Research India (P) Ltd, Chennai</div>
-                    <div class="date">September 2011 - March 2015</div>
-                    <ul>
-                        <li>Provided L1 to L3 technical support for clinical applications</li>
-                        <li>Managed user acceptance testing and requirement elicitation</li>
-                        <li>Ensured SOX compliance with zero exceptions</li>
-                        <li>Created databases and collaboration workspaces using Oracle WebCenter</li>
-                        <li>Managed Active Directory user accounts and application access</li>
-                        <li>Produced management reports including dashboards, SLAs, and KPIs</li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education">
-        <div class="container">
-            <h2 class="section-title">Education & Certifications</h2>
-            <div class="education-grid">
-                
-                <div class="education-card">
-                    <h3>Bachelor of Engineering</h3>
-                    <div class="institution">Computer Science and Engineering</div>
-                    <div class="details">
-                        Graduated with 80%<br>
-                        Comprehensive coursework in software engineering, database systems, and web technologies
-                    </div>
-                </div>
-
-                <div class="education-card">
-                    <h3>Veeva Vault Professional</h3>
-                    <div class="institution">Veeva Systems</div>
-                    <div class="details">
-                        Certified Veeva Vault Professional demonstrating advanced proficiency in Veeva Vault platform
-                    </div>
-                </div>
-
-                <div class="education-card">
-                    <h3>Veeva Vault Associate Administrator</h3>
-                    <div class="institution">Veeva Systems</div>
-                    <div class="details">
-                        Professional certification in Veeva Vault administration and configuration
-                    </div>
-                </div>
-
-                <div class="education-card">
-                    <h3>RPA Using UiPath</h3>
-                    <div class="institution">UiPath Academy</div>
-                    <div class="details">
-                        Certified in Robotic Process Automation development and implementation
-                    </div>
-                </div>
-
-                <div class="education-card">
-                    <h3>RPA Business Analyst</h3>
-                    <div class="institution">Professional Certification</div>
-                    <div class="details">
-                        Specialized certification in RPA business analysis and automation strategy
-                    </div>
-                </div>
-
-                <div class="education-card">
-                    <h3>ITIL Intermediate SO</h3>
-                    <div class="institution">ITIL Foundation</div>
-                    <div class="details">
-                        Service Operations certification demonstrating IT service management expertise
-                    </div>
-                </div>
-
-                <div class="education-card">
-                    <h3>Java/J2EE & Web Technology</h3>
-                    <div class="institution">Professional Certification</div>
-                    <div class="details">
-                        Comprehensive certification in Java programming and web technologies
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <p class="contact-intro">
-                    I'm always interested in discussing new opportunities, innovative projects, or collaborative ventures in clinical applications management and IT solutions. Whether you're looking for expertise in clinical systems, RPA implementation, or Power Automation, I'd be happy to connect.
-                </p>
-                
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="icon">📧</div>
-                        <div class="label">Email</div>
-                        <div class="value"><a href="mailto:dhanamscse@gmail.com">dhanamscse@gmail.com</a></div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="icon">📱</div>
-                        <div class="label">Mobile</div>
-                        <div class="value"><a href="tel:+918973359929">+91 89733 59929</a></div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="icon">📍</div>
-                        <div class="label">Location</div>
-                        <div class="value">Chennai, Tamil Nadu, India</div>
-                    </div>
-                </div>
-
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/dhanalakshmi-manigandan" target="_blank" title="LinkedIn">in</a>
-                    <a href="mailto:dhanamscse@gmail.com" title="Email">@</a>
-                    <a href="tel:+918973359929" title="Phone">☎</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Dhanalakshmi Manigandan. All rights reserved.</p>
-        <p>IT Manager | Clinical Applications Expert | RPA & Power Automation Specialist</p>
-    </footer>
-
-    <!-- Scroll to Top Button -->
-    <div class="scroll-top" id="scrollTop">↑</div>
-
-    <script>
-        // Mobile menu toggle
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navMenu = document.getElementById('nav-menu');
-
-        mobileMenu.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on a link
-        const navLinks = document.querySelectorAll('#nav-menu a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-            });
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offsetTop = target.offsetTop - 70;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Add active class to navigation on scroll
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const sections = document.querySelectorAll('section');
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-
-            // Show/hide scroll to top button
-            const scrollTop = document.getElementById('scrollTop');
-            if (window.pageYOffset > 300) {
-                scrollTop.classList.add('visible');
-            } else {
-                scrollTop.classList.remove('visible');
-            }
-        });
-
-        // Scroll to top functionality
-        document.getElementById('scrollTop').addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all cards and items
-        document.querySelectorAll('.skill-card, .experience-item, .education-card, .contact-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>
