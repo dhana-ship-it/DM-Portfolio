@@ -12,19 +12,19 @@
         }
 
         :root {
-            /* Deep Purple, Silver, Coral Theme (55%, 35%, 10%) */
-            --deep-navy: #2d1b4e;
-            --navy-blue: #4a2870;
-            --light-navy: #6a3d9a;
+            /* Deep Purple, Teal, Light Grey Theme (55%, 35%, 10%) */
+            --deep-navy: #4a148c;
+            --navy-blue: #6a1b9a;
+            --light-navy: #8e24aa;
             --light-grey: #e8e8e8;
             --soft-white: #f5f5f5;
             --pure-white: #ffffff;
-            --light-orange: #ff7f6e;
-            --orange-accent: #ff6b5a;
+            --light-orange: #14b8a6;
+            --orange-accent: #0d9488;
             --text-dark: #2c3e50;
             --text-light: #7f8c8d;
-            --shadow: 0 4px 6px rgba(45, 27, 78, 0.1);
-            --shadow-lg: 0 10px 30px rgba(45, 27, 78, 0.2);
+            --shadow: 0 4px 6px rgba(74, 20, 140, 0.1);
+            --shadow-lg: 0 10px 30px rgba(74, 20, 140, 0.2);
         }
 
         body {
@@ -104,9 +104,9 @@
             transition: 0.3s;
         }
 
-        /* Hero Section with Innovative Imagery */
+        /* Hero Section with Purple to Teal Gradient */
         .hero {
-            background: linear-gradient(135deg, var(--deep-navy) 0%, var(--navy-blue) 100%);
+            background: linear-gradient(135deg, #4a148c 0%, #5e35b1 25%, #4a90a4 75%, #14b8a6 100%);
             color: var(--pure-white);
             padding: 120px 2rem 80px;
             min-height: 100vh;
@@ -126,8 +126,8 @@
             right: 0;
             bottom: 0;
             background-image: 
-                radial-gradient(circle at 20% 30%, rgba(255, 163, 102, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(255, 140, 66, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -152,7 +152,7 @@
         .hero-content .title {
             font-size: 1.8rem;
             margin-bottom: 1rem;
-            color: var(--light-orange);
+            color: var(--pure-white);
             font-weight: 600;
             animation: fadeInUp 1s ease 0.2s;
             animation-fill-mode: both;
@@ -161,7 +161,8 @@
         .hero-content .subtitle {
             font-size: 1.2rem;
             margin-bottom: 2.5rem;
-            opacity: 0.9;
+            color: var(--pure-white);
+            opacity: 0.95;
             animation: fadeInUp 1s ease 0.3s;
             animation-fill-mode: both;
         }
@@ -180,9 +181,9 @@
         }
 
         .visual-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 163, 102, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 20px;
             padding: 2rem;
             text-align: center;
@@ -198,13 +199,13 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--light-orange), var(--orange-accent));
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
         }
 
         .visual-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(255, 163, 102, 0.3);
-            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .visual-icon {
@@ -218,12 +219,13 @@
             font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
-            color: var(--light-orange);
+            color: var(--pure-white);
         }
 
         .visual-desc {
             font-size: 0.95rem;
-            opacity: 0.8;
+            color: var(--pure-white);
+            opacity: 0.9;
             line-height: 1.5;
         }
 
@@ -237,22 +239,23 @@
         .stat-item {
             flex: 1;
             text-align: center;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             padding: 1.5rem;
             border-radius: 15px;
-            border: 2px solid rgba(255, 163, 102, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
         .stat-number {
             font-size: 2.5rem;
             font-weight: bold;
             display: block;
-            color: var(--light-orange);
+            color: var(--pure-white);
         }
 
         .stat-label {
             font-size: 0.9rem;
+            color: var(--pure-white);
             opacity: 0.9;
             margin-top: 0.5rem;
         }
@@ -260,8 +263,8 @@
         .btn {
             display: inline-block;
             padding: 1rem 2.5rem;
-            background: var(--light-orange);
-            color: var(--deep-navy);
+            background: var(--pure-white);
+            color: #4a148c;
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
@@ -273,8 +276,8 @@
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 163, 102, 0.4);
-            background: var(--orange-accent);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.95);
         }
 
         /* Sections */
@@ -344,7 +347,7 @@
         .about-text p {
             margin-bottom: 1rem;
             line-height: 1.8;
-            color: var(--text-light);
+            color: #000000;
             text-align: justify;
         }
 
@@ -368,7 +371,7 @@
 
         .certifications li {
             padding: 0.5rem 0;
-            color: var(--text-dark);
+            color: #000000;
             position: relative;
             padding-left: 1.5rem;
         }
@@ -390,7 +393,7 @@
             text-align: center;
             max-width: 800px;
             margin: 0 auto 3rem;
-            color: var(--text-light);
+            color: #000000;
             font-size: 1.1rem;
         }
 
@@ -433,7 +436,7 @@
 
         .skill-card li {
             padding: 0.6rem 0;
-            color: var(--text-light);
+            color: #000000;
             position: relative;
             padding-left: 1.5rem;
             line-height: 1.6;
@@ -564,7 +567,7 @@
         }
 
         .education-card .details {
-            color: var(--text-light);
+            color: #000000;
             line-height: 1.6;
         }
 
@@ -580,7 +583,7 @@
         }
 
         .contact-intro {
-            color: var(--text-light);
+            color: #000000;
             font-size: 1.1rem;
             margin-bottom: 2rem;
             line-height: 1.8;
@@ -614,7 +617,7 @@
 
         .contact-item .label {
             font-size: 0.9rem;
-            color: var(--text-light);
+            color: #000000;
             margin-bottom: 0.3rem;
         }
 
